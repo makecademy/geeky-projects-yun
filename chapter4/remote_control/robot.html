@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-2.0.3.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Robot Control</title>
+</head>
+
+<body>
+	<form id="robot" action="robot.php" method="GET">
+    	<input type="button" id="stop" class="commandButton" value="Stop" onClick="stopRobot()"/>
+    	<input type="button" id="fullfw" class="commandButton" value="Full speed forward" onClick="fullForward()"/>
+		<input type="button" id="turnleft" class="commandButton" value="Turn left" onClick="turnLeft()"/>
+		<input type="button" id="turnright" class="commandButton" value="Turn right" onClick="turnRight()"/>
+
+	</form>
+
+	<div id="distanceDisplay"></div>
+
+	<script type="text/javascript">
+		
+		setInterval(function() 
+	{
+	    $("#distanceDisplay").load('get_distance.php');
+	}, 1000);
+
+	</script>
+
+</body>
+
+</html>
+
